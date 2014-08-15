@@ -258,7 +258,9 @@ public class SpringAMQPEndpoint extends DefaultEndpoint {
 
     @Override
     public boolean isSingleton() {
-        return false;
+        return true; 
+        // original code is 'return false'. 
+        // It causes Producers are created for every incoming message.
     }
 
     @Override
