@@ -6,6 +6,7 @@ package amqp.spring.camel.component;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Endpoint;
+import org.apache.camel.BeanInject;
 import org.apache.camel.impl.DefaultComponent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,6 +76,7 @@ public class SpringAMQPComponent extends DefaultComponent {
     }
 
     @Deprecated
+    @BeanInject
     public void setConnectionFactory(ConnectionFactory connectionFactory) {
         this.connectionFactory = new HashMap<String, ConnectionFactory>();
         this.connectionFactory.put(DEFAULT_CONNECTION, connectionFactory);
